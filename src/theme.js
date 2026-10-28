@@ -7,7 +7,7 @@ export const theme = {
     success: '#52CA76',
     warning: '#F6AA1C',
     darkgray: '#1F1F1F',
-    darkgray2: '#474747',
+    darkgray2: '#47474717',
     darkgray3: '#666666',
     lightgray: '#8F8F8F',
     lightgray2: '#CCCCCC',
