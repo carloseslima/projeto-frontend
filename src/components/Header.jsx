@@ -4,7 +4,7 @@ import Logo from "./Logo";
 const HeaderContainer = styled.header`
     background-color: #ffffff;
     display: flex;
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
     justify-content: space-between;
     flex-direction: column;
@@ -13,13 +13,44 @@ const HeaderContainer = styled.header`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        & input{
-            background-color: ${(props) => props.theme.colors.darkgray2};
+        & span{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-radius: 8px;
             border: none;
             width: 559px;
             height: 60px;
+            & input{
+                background-color: none;
+                border: none;
+                height: 60px;
+                background-color: transparent;
+                width: 100%;
+                outline: none;
+                padding: 0 10px;
+            }
+            & input::-webkit-search-decoration,
+            input::-webkit-search-cancel-button,
+            input::-webkit-search-results-button,
+            input::-webkit-search-results-decoration {
+                display: none;
+            }
+            & button {
+                border: none;
+                cursor: pointer;
+                background-color: transparent;
+                & img{
+                    opacity: 0.4;
+                }
+            }
         }
+
+        & #cadastrese{
+            font-size: 16px;
+            color: ${(props) => props.theme.colors.darkgray2};
+        }
+        
         & #entrar{
             display: flex;
             justify-content: center;
@@ -33,12 +64,20 @@ const HeaderContainer = styled.header`
             font-size: 14px;
             text-decoration: none;
         }
-        & ul{
+        
+    
+    }
+    & ul{
         display: flex;
         list-style: none;
-
-    }
-    
+        padding: 0;
+        gap: 30px;
+        & li{
+            & a{
+                text-decoration: none;
+                color: ${(props) => props.theme.colors.darkgray2};
+            }
+        }
     }
 `;
 
@@ -47,11 +86,15 @@ const Header = () => {
         <HeaderContainer>
             <div>
                 <Logo />
-                <input type="text" />
+                <span>
+                    <input type="search" placeholder="Pesquisar produto..." />
+                    <button type="submit"><img src="../src/assets/search.svg" alt="search" /></button>
+                </span>
+
                 <a id="cadastrese" href="#">Cadastre-se</a>
                 <a id="entrar" href="#">Entrar</a>
-                <img src="../src/assets/cart.svg" alt="" />
-
+                <img src="../src/assets/buy.svg" alt="" />
+                
             </div>
             <ul>
                 <li><a href="/">Home</a></li>
