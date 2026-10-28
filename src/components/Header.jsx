@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
         justify-content: space-between;
         align-items: center;
         & input{
-            background-color: #474747;
+            background-color: ${(props) => props.theme.colors.darkgray2};
             border-radius: 8px;
             border: none;
             width: 559px;
