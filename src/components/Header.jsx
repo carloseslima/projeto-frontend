@@ -15,47 +15,13 @@ const HeaderContainer = styled.header`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
-        & span{
-            display: flex;
-            justify-content: space-between;
-            background-color: ${(props) => props.theme.colors.lightgray3};
-            align-items: center;
+        & input{
+            background-color: ${(props) => props.theme.colors.darkgray2};
             border-radius: 8px;
             border: none;
             width: 559px;
             height: 60px;
-            & input{
-                background-color: none;
-                border: none;
-                height: 60px;
-                background-color: transparent;
-                width: 100%;
-                outline: none;
-                padding: 0 10px;
-                font-size: 18px;
-            }
-            & input::-webkit-search-decoration,
-            input::-webkit-search-cancel-button,
-            input::-webkit-search-results-button,
-            input::-webkit-search-results-decoration {
-                display: none;
-            }
-            & button {
-                border: none;
-                cursor: pointer;
-                background-color: transparent;
-                & img{
-                    opacity: 0.4;
-                }
-            }
         }
-
-        & #cadastrese{
-            font-size: 16px;
-            color: ${(props) => props.theme.colors.darkgray2};
-        }
-        
         & #entrar{
             display: flex;
             justify-content: center;
@@ -75,29 +41,9 @@ const HeaderContainer = styled.header`
     & ul{
         display: flex;
         list-style: none;
-        padding: 0;
-        gap: 30px;
-        & li{
-            display: flex;
-            align-items: flex-end;
-            & a{
-                text-decoration: none;
-                color: ${(props) => props.theme.colors.darkgray2};
-                &.active{
-                    color: ${(props) => props.theme.colors.primary};
-                    font-weight: bold;
-                }
-                &.active::before{
-                    content: "";
-                    position: relative;
-                    display: flex;
-                    top: 25px;
-                    width: 100%;
-                    height: 2px;
-                    background-color: ${(props) => props.theme.colors.primary};
-                }
-            }
-        }
+
+    }
+    
     }
 `;
 
@@ -113,7 +59,7 @@ const Header = () => {
 
                 <a id="cadastrese" href="#">Cadastre-se</a>
                 <a id="entrar" href="#">Entrar</a>
-                <img src="../src/assets/buy.svg" alt="" />
+                <img src="../src/assets/cart.svg" alt="" />
 
             </div>
             <nav>
