@@ -1,7 +1,9 @@
+import ProductListing from '../components/ProductListing';
+
 const ProductListingPage = () => {
     return (
         <>
-            Lista de produtos
+            <ProductListing />
         </>
     );
 }

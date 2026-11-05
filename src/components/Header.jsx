@@ -4,6 +4,7 @@ import Logo from "./Logo";
 
 const HeaderContainer = styled.header`
     background-color: ${(props) => props.theme.colors.white};
+    padding: 0 50px; 
     display: flex;
     max-width: 1440px;
     margin: 0 auto;

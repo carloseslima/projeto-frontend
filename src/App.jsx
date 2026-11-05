@@ -1,3 +1,6 @@
+import "primeflex/primeflex.css";
+import "primeicons/primeicons.css";
+
 import { useState } from 'react'
 import Layout from './pages/Layout'
 import { ThemeProvider } from 'styled-components';
