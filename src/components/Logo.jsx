@@ -9,7 +9,7 @@ const LogoContainer = styled.h1`
 const Logo = () => {
     return (
         <LogoContainer>
-            <img src="/public/logo.svg" alt="logo" />
+            <img src="/logo.svg" alt="logo" />
         </LogoContainer>
     );
 }
