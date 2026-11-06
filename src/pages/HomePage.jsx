@@ -1,7 +1,9 @@
+import Galery from "../components/Galery";
+
 const HomePage = () => {
     return (
         <>
-        HOME
+        <Galery />
         </>
     );
 }

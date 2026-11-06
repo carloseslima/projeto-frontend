@@ -13,6 +13,8 @@ const FooterContainer = styled.footer`
     font-size: 12px;
     & #footer-content{
         display: flex;
+        max-width: 1440px;
+        margin: 0 auto;
         gap: 50px
     }
     & #footer-logo{
@@ -34,7 +36,12 @@ const FooterContainer = styled.footer`
     & span{
         display: flex;
         flex-direction: column;
+        width: 100%;
         align-items: center;
+        max-width: 1440px;
+        margin: 0 auto;
+        
+        
         & hr{
             background-color: ${(props) => props.theme.colors.lightgray};
             border: none;
