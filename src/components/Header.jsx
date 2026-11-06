@@ -108,12 +108,12 @@ const Header = () => {
                 <Logo />
                 <span>
                     <input type="search" placeholder="Pesquisar produto..." />
-                    <button type="submit"><img src="../src/assets/search.svg" alt="search" /></button>
+                    <button type="submit"><img src="/search.svg" alt="search" /></button>
                 </span>
 
                 <a id="cadastrese" href="#">Cadastre-se</a>
                 <a id="entrar" href="#">Entrar</a>
-                <img src="../src/assets/buy.svg" alt="" />
+                <img src="/buy.svg" alt="" />
 
             </div>
             <nav>

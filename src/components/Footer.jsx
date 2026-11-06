@@ -59,9 +59,9 @@ const Footer = () => {
                     <Logo />
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et ut rerum tenetur possimus porro quis id ex, aliquid architecto animi voluptatibus perferendis voluptatum repellat, eius necessitatibus minima dicta. Nemo.</p>
                     <div id="footer-social">
-                        <a href="#"><img src="/public/fb.png" alt="facebook" /></a>
-                        <a href="#"><img src="/public/ig.png" alt="instagram" /></a>
-                        <a href="#"><img src="/public/tw.png" alt="twitter" /></a>
+                        <a href="#"><img src="/fb.png" alt="facebook" /></a>
+                        <a href="#"><img src="/ig.png" alt="instagram" /></a>
+                        <a href="#"><img src="/tw.png" alt="twitter" /></a>
                     </div>
                 </div>
                 <div id="div-2">

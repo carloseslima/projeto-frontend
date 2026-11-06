@@ -76,7 +76,7 @@ const Galery = () => {
                     <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et ut rerum tenetur possimus porro quis id ex, aliquid architecto animi voluptatibus perferendis voluptatum repellat, eius necessitatibus minima dicta. Nemo.</p>
                     <a href="#">Ver Ofertas</a>
                 </div>
-                <img src="/public/white-sneakers-png-clipart.png" alt="tenis" />
+                <img src="/white-sneakers-png-clipart.png" alt="tenis" />
             </Slider>
 
             <SliderControler>
