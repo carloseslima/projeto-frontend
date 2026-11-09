@@ -11,7 +11,8 @@ export const theme = {
     darkgray3: '#666666',
     lightgray: '#8F8F8F',
     lightgray2: '#CCCCCC',
-    lightgray3: '#F5F5F5',
+    lightgray3: '#f6f6f6',
+    lightgray4: '#f1f1f1',
     white: '#FFFFFF',
   }
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Slider = styled.section`
-    background-color: ${(props) => props.theme.colors.lightgray3};
+    background-color: ${(props) => props.theme.colors.lightgray4};
     width: 100%;
     display: flex;
     padding: 50px 0;

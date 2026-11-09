@@ -9,7 +9,7 @@ const FooterContainer = styled.footer`
     justify-content: space-between;
     background-color: ${(props) => props.theme.colors.darkgray};
     color: ${(props) => props.theme.colors.white};
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
     font-size: 12px;
     & #footer-content{
         display: flex;
