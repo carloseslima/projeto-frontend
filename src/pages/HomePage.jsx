@@ -1,12 +1,13 @@
 import Galery from "../components/Galery";
 import Section from "../components/Section";
+import Layout from "./Layout";
 
 const HomePage = () => {
     return (
-        <>
-        <Galery />
-        <Section />
-        </>
+        <Layout>
+            <Galery />
+            <Section />
+        </Layout>
     );
 }
  

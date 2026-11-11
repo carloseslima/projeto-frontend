@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CollectionSection = styled.section`
     width: 90%;
-    max-width: 1440px;x;
+    max-width: 1440px;
     margin: 0 auto;
     & h2{
         color: ${(props) => props.theme.colors.darkgray2};
