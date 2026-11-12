@@ -1,94 +1,81 @@
-import styled from "styled-components";
+import React, { useState } from 'react';
 
-const Slider = styled.section`
-    background-color: ${(props) => props.theme.colors.lightgray4};
-    width: 100%;
-    display: flex;
-    padding: 50px 0;
-    & #slider-text{
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        max-width: 1440px;
-        margin: 0 auto;
-        background-image: url("/public/ornament11.png");
-        background-repeat: no-repeat;
-        background-position: right 5% bottom 100%;
-        & h2{
-            color: ${(props) => props.theme.colors.warning};
-            font-size: 15px;
-        }
-        & h3{
-            font-size: 50px;
-            margin: 0;
-            padding: 0;
-        }
-        & p{
-            width: 50%;
-        }
-        & a{
-            display: flex;
-            padding: 10px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            width: 200px;
-            align-items: center;
-            justify-content: center;
-            color: ${(props) => props.theme.colors.white};
-            background-color: ${(props) => props.theme.colors.primary};
-        }
-    }
-    & img{
-        transform: rotate(-15deg);
-        position: absolute;
-        top: 2px;
-        left: 50%;
-        width: 500px;
-    }
-`;
+const images = [
+  '/home-slide-1.jpeg',
+  '/home-slide-2.jpeg',
+  '/home-slide-3.jpeg',
+  '/home-slide-4.jpeg',
+];
 
-const SliderControler = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    height: 30px;
-    background-color: ${(props) => props.theme.colors.lightgray3};
-    & span{
-        cursor: pointer;
-        width: 10px;
-        height: 10px;
-        background-color: ${(props) => props.theme.colors.lightgray};
-        border-radius: 50%;
-    }
-    & .slide-active{
-        background-color: ${(props) => props.theme.colors.primary};
-    }
-`;
+const  Galery= () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const Galery = () => {
-    return (
-        <>
-            <Slider>
-                <div id="slider-text">
-                    <h2>Melhores ofertas personalizadas</h2>
-                    <h3>Queima de estoque Nike 🔥</h3>
-                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et ut rerum tenetur possimus porro quis id ex, aliquid architecto animi voluptatibus perferendis voluptatum repellat, eius necessitatibus minima dicta. Nemo.</p>
-                    <a href="#">Ver Ofertas</a>
-                </div>
-                <img src="/white-sneakers-png-clipart.png" alt="tenis" />
-            </Slider>
-
-            <SliderControler>
-                <span className="slide-active"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </SliderControler>
-
-        </>
-
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div style={{ maxWidth: '1440px', margin: '0 auto', textAlign: 'center' }}>
+      <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
+        <img
+          src={images[currentIndex]}
+          alt={`Slide ${currentIndex + 1}`}
+          style={{ width: '100%', height: '681px', objectFit: 'cover' }}
+        />
+        
+        <button 
+          onClick={handlePrev}
+          style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)' }}
+        >
+          ❮
+        </button>
+        
+        <button 
+          onClick={handleNext}
+          style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)' }}
+        >
+          ❯
+        </button>
+      </div>
+
+      <div style={{ marginTop: '10px',display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center', }}>
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            style={{
+              margin: '0 5px',
+              padding: '5px 10px',
+              backgroundColor: currentIndex === index ? '#C92071' : '#ccc',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '50%',
+              width: '20px',
+              height: '20px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer'
+            }}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 }
+
+
 
 export default Galery;
