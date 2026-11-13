@@ -24,36 +24,55 @@ const HomePage = () => {
 
 
     const produtos = [
-        { id: 1, src: 'produc-image-1.jpeg', nome: 'Produto 1', preco: 3500 },
-        { id: 2, src: 'produc-image-2.jpeg', nome: 'Produto 2', preco: 3500 },
-        { id: 3, src: 'produc-image-3.jpeg', nome: 'Produto 3', preco: 3500 },
-        { id: 4, src: 'produc-image-4.jpeg', nome: 'Produto 4', preco: 3500 },
-        { id: 5, src: 'produc-image-5.jpeg', nome: 'Produto 5', preco: 3500 },
-        { id: 6, src: 'product-thumb-1.jpeg', nome: 'Produto 6', preco: 3500 },
-        { id: 7, src: 'product-thumb-2.jpeg', nome: 'Produto 7', preco: 3500 },
-        { id: 8, src: 'product-thumb-3.jpeg', nome: 'Produto 8', preco: 3500 },
+        { id: 1, src: 'produc-image-1.jpeg', nome: 'Adidas Samba OG', price: 3500, priceDiscount: '3000' },
+        { id: 2, src: 'produc-image-2.jpeg', nome: 'PAdidas Gazelle Indoor', price: 3500, priceDiscount: '3000' },
+        { id: 3, src: 'produc-image-3.jpeg', nome: 'Adidas Gazelle Indoor', price: 3500, priceDiscount: '3000' },
+        { id: 4, src: 'produc-image-4.jpeg', nome: 'Nike Court Vision Low', price: 3500, priceDiscount: '3000' },
+        { id: 5, src: 'produc-image-5.jpeg', nome: 'Puma Speedcat OG', price: 3500, priceDiscount: '3000' },
+        { id: 6, src: 'produc-image-1.jpeg', nome: 'Puma Speedcat OG', price: 3500, priceDiscount: '3000' },
+        { id: 7, src: 'produc-image-2.jpeg', nome: 'New Balance 9060', price: 3500, priceDiscount: '3000' },
+        { id: 8, src: 'produc-image-3.jpeg', nome: 'New Balance 550', price: 3500, priceDiscount: '3000' },
     ];
 
     const ProdutosEmAlta = styled.div`
-        background-color: red;
         width: 1440px;
         max-width: 100%;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 1%;
         justify-content: space-between;
         align-items: start;
         
         & div{
-            background-color: blue;
             display: flex;
             justify-content: space-between;
-            width: 90%;
+            width: 24.25%;
             flex-direction: column;
+            margin-bottom: 10px;
             & img{
                 width: 100%;
                 border-radius: 10px;
+            }
+            & h2{
+                color: ${(props) => props.theme.colors.darkgray3};
+                font-weight: 400;
+                font-size: 24px;
+                padding: 0;
+            }
+            & div{
+                display: flex;
+                flex-direction: row;
+                
+                align-items: center;
+                justify-content: start;
+                gap: 10px;
+                font-size: 24px;
+                margin: 0;
+                padding: 0;
+                & h3{
+                    
+                }
             }
         }
 `;
@@ -77,9 +96,10 @@ const HomePage = () => {
                 {produtos.map((produto) => (
                     <div key={produto.id}>
                         <ProductCard
-                            imagem={`${produto.src}`}
+                            imagemSrc={`${produto.src}`}
                             name={`${produto.nome}`}
-                            price={`${produto.preco}`}
+                            price={`${produto.price}`}
+                            priceDiscount={`${produto.priceDiscount}`}
                         />
                     </div>
                 ))}

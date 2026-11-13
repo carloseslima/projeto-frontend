@@ -1,12 +1,15 @@
-const ProductCard = ({ imagem, name, price, priceDiscount, style}) => {
+const ProductCard = ({ imagemSrc, name, price, priceDiscount }) => {
     return (
-        <div>
-            <img src={`${imagem}`} alt="" />
+        <>
+            <img src={`${imagemSrc}`} alt="" s />
             <h2>{name}</h2>
-            <h3>{price}</h3>
-            <h4>{priceDiscount}</h4>
-        </div>
+            <div>
+                <h3>{price}</h3>
+                <h4>{priceDiscount}</h4>
+            </div>
+
+        </>
     );
 }
- 
+
 export default ProductCard;
