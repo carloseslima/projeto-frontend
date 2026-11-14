@@ -1,5 +1,8 @@
 import Logo from "./Logo"
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { Info } from "@primeicons/react";
+import Information from "./Information";
 
 const FooterContainer = styled.footer`
     display: flex;
@@ -15,7 +18,7 @@ const FooterContainer = styled.footer`
         display: flex;
         max-width: 1440px;
         margin: 0 auto;
-        gap: 50px
+        gap: 20px;
     }
     & #footer-logo{
         display: flex;
@@ -29,61 +32,126 @@ const FooterContainer = styled.footer`
         gap: 30px;
         align-items: center;
     }
-    & #div-2{
+    & .infoContent{
         display: flex;
-        gap: 50px;
+        gap: 20px;
+    }
+    & .info-section{
+        display: flex;
+        flex-direction: column;
+        
+        & a{
+            text-decoration: none;
+            color: ${(props) => props.theme.colors.white};
+        }
+        & .info-title{
+            margin: 0 0 20px 0;
+            font-size: 15px;
+        }
+        & .info-list{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+    }
+    & #contato{
+        display: flex;
+        flex-direction: column;
+        & h2{
+            margin: 0 0 20px 0;
+            font-size: 15px;
+        }
+        & p{
+            margin: 0 0 20px 0;
+        }
     }
     & span{
         display: flex;
         flex-direction: column;
-        width: 100%;
         align-items: center;
-        max-width: 1440px;
-        margin: 0 auto;
-        
-        
         & hr{
-            background-color: ${(props) => props.theme.colors.lightgray};
-            border: none;
-            width: 100%;
-            height: 1px;
+            border: 1px solid ${(props) => props.theme.colors.lightgray2};;
+            margin: 0;
+            width: 1440px;
         }
     }
+    
 `;
 
 const Footer = () => {
+
+const infoData = [
+    {
+      text: "Sobre Drip Store",
+      link: "#"
+    },
+    {
+      text: "Segurança",
+      link: "#"
+    },
+    {
+      text: "Wishlist",
+      link: "#"
+    },
+    {
+      text: "Blog",
+      link: "#"
+    },
+    {
+      text: "Trabalhe conosco",
+      link: "#"
+    },
+    {
+      text: "Meus Pedidos",
+      link: "#"
+    }
+  ];
+
+const categoryData = [
+    {
+      text: "Camisetas",
+      link: "#"
+    },
+    {
+      text: "Calças",
+      link: "#"
+    },
+    {
+      text: "Bonés",
+      link: "#"
+    },
+    {
+      text: "Headphones",
+      link: "#"
+    },
+    {
+      text: "Tênis",
+      link: "#"
+    }
+  ];
+
+
     return (
         <FooterContainer>
             <div id="footer-content">
                 <div id="footer-logo">
-                    <Logo />
+                    <Link to="/"><Logo /></Link>
+
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et ut rerum tenetur possimus porro quis id ex, aliquid architecto animi voluptatibus perferendis voluptatum repellat, eius necessitatibus minima dicta. Nemo.</p>
                     <div id="footer-social">
-                        <a href="#"><img src="/fb.png" alt="facebook" /></a>
-                        <a href="#"><img src="/ig.png" alt="instagram" /></a>
-                        <a href="#"><img src="/tw.png" alt="twitter" /></a>
+                        <Link to="#"><img src="/fb.png" alt="facebook" /></Link>
+                        <Link to="#"><img src="/ig.png" alt="instagram" /></Link>
+                        <Link to="#"><img src="/tw.png" alt="twitter" /></Link>
                     </div>
                 </div>
-                <div id="div-2">
-                    <div>
-                        <h2>Informação</h2>
-                        <p>Sobre Drip Store</p>
-                        <p>Segurança</p>
-                        <p>Wishlist</p >
-                        <p>Blog</p>
-                        <p>Trabalhe conosco</p>
-                        <p>Meus Pedidos</p>
-                    </div>
-                    <div>
-                        <h2>Categorias</h2>
-                        <p>Camisetas</p>
-                        <p>Calças</p>
-                        <p>Bonés</p>
-                        <p>Headphones</p>
-                        <p>Tênis</p>
-                    </div>
+                <div className="infoContent">
+                    <Information title="Informação" informations={infoData} />
+                    <Information title="Categorias" informations={categoryData} />
+                    
+                    
                 </div>
-                <div>
+                <div id="contato">
                     <h2>Contato</h2>
                     <p>Av. Santos Dumont, 1510-1 Andar - Aldeota, Fortaleza - CE, 60150-161</p>
                     <p>(85) 9 9999-9999</p>
@@ -96,5 +164,5 @@ const Footer = () => {
         </FooterContainer>
     );
 }
-
+ 
 export default Footer;

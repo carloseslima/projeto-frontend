@@ -4,8 +4,6 @@ import ProductListingPage from "../pages/ProductListingPage.jsx";
 import Category from "../pages/Category.jsx";
 import MyOrders from "../pages/MyOrders.jsx";
 import PageNotFound from "../pages/PageNotFound.jsx";
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
 
 const Paths = () => {
     return (

@@ -24,14 +24,14 @@ const HomePage = () => {
 
 
     const produtos = [
-        { id: 1, src: 'produc-image-1.jpeg', nome: 'Adidas Samba OG', price: 3500, priceDiscount: '3000' },
-        { id: 2, src: 'produc-image-2.jpeg', nome: 'PAdidas Gazelle Indoor', price: 3500, priceDiscount: '3000' },
-        { id: 3, src: 'produc-image-3.jpeg', nome: 'Adidas Gazelle Indoor', price: 3500, priceDiscount: '3000' },
-        { id: 4, src: 'produc-image-4.jpeg', nome: 'Nike Court Vision Low', price: 3500, priceDiscount: '3000' },
-        { id: 5, src: 'produc-image-5.jpeg', nome: 'Puma Speedcat OG', price: 3500, priceDiscount: '3000' },
-        { id: 6, src: 'produc-image-1.jpeg', nome: 'Puma Speedcat OG', price: 3500, priceDiscount: '3000' },
-        { id: 7, src: 'produc-image-2.jpeg', nome: 'New Balance 9060', price: 3500, priceDiscount: '3000' },
-        { id: 8, src: 'produc-image-3.jpeg', nome: 'New Balance 550', price: 3500, priceDiscount: '3000' },
+        { id: 1, src: 'produc-image-1.jpeg', nome: 'Adidas Samba OG', price: "350,00", priceDiscount: '300,00' },
+        { id: 2, src: 'produc-image-2.jpeg', nome: 'Adidas Gazelle Indoor', price: "350,00", priceDiscount: '300,00' },
+        { id: 3, src: 'produc-image-3.jpeg', nome: 'Adidas Gazelle Indoor', price: "350,00", priceDiscount: '300,00' },
+        { id: 4, src: 'produc-image-4.jpeg', nome: 'Nike Court Vision Low', price: "350,00", priceDiscount: '300,00' },
+        { id: 5, src: 'produc-image-5.jpeg', nome: 'Puma Speedcat OG', price: "350,00", priceDiscount: '300,00' },
+        { id: 6, src: 'produc-image-1.jpeg', nome: 'Puma Speedcat OG', price: "350,00", priceDiscount: '300,00' },
+        { id: 7, src: 'produc-image-2.jpeg', nome: 'New Balance 9060', price: "350,00", priceDiscount: '300,00' },
+        { id: 8, src: 'produc-image-3.jpeg', nome: 'New Balance 550', price: "350,00", priceDiscount: '300,00' },
     ];
 
     const ProdutosEmAlta = styled.div`
@@ -43,13 +43,16 @@ const HomePage = () => {
         gap: 1%;
         justify-content: space-between;
         align-items: start;
+        & a{
+            text-decoration: none;
+        }
         
         & div{
             display: flex;
             justify-content: space-between;
             width: 24.25%;
             flex-direction: column;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             & img{
                 width: 100%;
                 border-radius: 10px;
@@ -58,20 +61,26 @@ const HomePage = () => {
                 color: ${(props) => props.theme.colors.darkgray3};
                 font-weight: 400;
                 font-size: 24px;
-                padding: 0;
             }
             & div{
                 display: flex;
                 flex-direction: row;
-                
                 align-items: center;
                 justify-content: start;
+                width: 100%;
                 gap: 10px;
                 font-size: 24px;
-                margin: 0;
-                padding: 0;
-                & h3{
-                    
+                & .price{
+                    display: flex;
+                    font-size: 20px;
+                    color: ${(props) => props.theme.colors.lightgray2};
+                    text-decoration: line-through;
+                }
+                & .priceDiscount{
+                    display: flex;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: ${(props) => props.theme.colors.darkgray};
                 }
             }
         }
@@ -95,12 +104,16 @@ const HomePage = () => {
             <ProdutosEmAlta>
                 {produtos.map((produto) => (
                     <div key={produto.id}>
-                        <ProductCard
-                            imagemSrc={`${produto.src}`}
-                            name={`${produto.nome}`}
-                            price={`${produto.price}`}
-                            priceDiscount={`${produto.priceDiscount}`}
-                        />
+                        
+                        <Link to="#">
+                            <ProductCard
+                                imagemSrc={`${produto.src}`}
+                                name={`${produto.nome}`}
+                                price={`${produto.price}`}
+                                priceDiscount={`${produto.priceDiscount}`}
+                            />
+                        </Link>
+
                     </div>
                 ))}
             </ProdutosEmAlta>

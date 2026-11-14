@@ -7,17 +7,17 @@ const images = [
   '/home-slide-4.jpeg',
 ];
 
-const  Galery= () => {
+const Galery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -30,25 +30,27 @@ const  Galery= () => {
           alt={`Slide ${currentIndex + 1}`}
           style={{ width: '100%', height: '681px', objectFit: 'cover' }}
         />
-        
-        <button 
+
+        <button
           onClick={handlePrev}
-          style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)' }}
+          style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', width: "60px", height: "60px", borderRadius: "50%", border: "none", cursor: "pointer", opacity: ".7"}}
         >
           ❮
         </button>
-        
-        <button 
+
+        <button
           onClick={handleNext}
-          style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)' }}
+          style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', width: "60px", height: "60px", borderRadius: "50%", border: "none", cursor: "pointer", opacity: ".7" }}
         >
           ❯
         </button>
       </div>
 
-      <div style={{ marginTop: '10px',display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center', }}>
+      <div style={{
+        marginTop: '10px', display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
         {images.map((_, index) => (
           <button
             key={index}
