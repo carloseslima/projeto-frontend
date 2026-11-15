@@ -100,13 +100,16 @@ const HeaderContainer = styled.header`
         }
     }
 @media (max-width: 1024px) {
-    width: 80%;
-    padding: 0 10%;
+    width: 70%;
+    padding: 0 15%;
     #logo{
         width: 200px;
     }
     & .menu-sup, #cadastrese, a#entrar{
         display: none;
+    }
+    & div{
+        
     }
 }
 `;

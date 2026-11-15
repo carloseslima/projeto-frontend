@@ -21,12 +21,15 @@ const ColectionImages = styled.div`
     @media (max-width: 1024px) {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
         & a{
-            width: 80%;
+            width: 100%;
+            
         }
 
 
     }
+    
     
 `;
 
@@ -70,7 +73,7 @@ const HomePage = () => {
             & h2{
                 color: ${(props) => props.theme.colors.darkgray3};
                 font-weight: 400;
-                font-size: 24px;
+                font-size: 20px;
             }
             & div{
                 display: flex;
@@ -82,13 +85,13 @@ const HomePage = () => {
                 font-size: 24px;
                 & .price{
                     display: flex;
-                    font-size: 20px;
+                    font-size: 15px;
                     color: ${(props) => props.theme.colors.lightgray2};
                     text-decoration: line-through;
                 }
                 & .priceDiscount{
                     display: flex;
-                    font-size: 20px;
+                    font-size: 15px;
                     font-weight: 700;
                     color: ${(props) => props.theme.colors.darkgray};
                 }
@@ -99,7 +102,11 @@ const HomePage = () => {
         gap: 20px;
         & div{
             width: 40%;
+            & div .price, div .priceDiscount{
+                font-size: 12px;
+            }
         }
+        
     }
     
 `;
@@ -108,7 +115,7 @@ const HomePage = () => {
         <Layout>
             <Galery />
 
-            <Section title="Coleção em destaque" titleAlign="left" link="">
+            <Section title="Coleção em destaque" titleAlign="center" link="">
                 <ColectionImages id="colec-dest">
                     <Link to="#"><img src="/collection-1.png" alt="Coleção em destaque" /></Link>
                     <Link to="#"><img src="/collection-2.png" alt="Coleção em destaque" /></Link>
@@ -122,7 +129,7 @@ const HomePage = () => {
             <ProdutosEmAlta>
                 {produtos.map((produto) => (
                     <div key={produto.id}>
-                        
+
                         <Link to="#">
                             <ProductCard
                                 imagemSrc={`${produto.src}`}

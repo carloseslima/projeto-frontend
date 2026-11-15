@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import React, { useState } from "react";
-import "/Sidebar.css";
+import "../Sidebar.css";
 
 export default function MenuMobile() {
     const [menuAberto, setMenuAberto] = useState(false);

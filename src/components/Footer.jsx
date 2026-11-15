@@ -16,9 +16,9 @@ const FooterContainer = styled.footer`
     & #footer-content{
         display: flex;
         max-width: 1440px;
-        width: 80%;
         margin: 0 auto;
         gap: 20px;
+        padding: 20px 0;
     }
     & #footer-logo{
         display: flex;
@@ -36,11 +36,11 @@ const FooterContainer = styled.footer`
     & .infoContent{
         display: flex;
         gap: 20px;
+        width: 25%;
     }
     & .info-section{
         display: flex;
         flex-direction: column;
-        
         & a{
             text-decoration: none;
             color: ${(props) => props.theme.colors.white};
@@ -50,18 +50,23 @@ const FooterContainer = styled.footer`
             font-size: 15px;
         }
         & .info-list{
+            display: flex;
+            flex-direction: column;
             list-style: none;
             margin: 0;
             padding: 0;
+            gap: 10px;
         }
+        
         
     }
     & #contato{
         display: flex;
         flex-direction: column;
+        width: 25%;
         & h2{
             margin: 0 0 20px 0;
-            font-size: 15px;
+            font-size: 18px;
         }
         & p{
             margin: 0 0 20px 0;
@@ -78,6 +83,9 @@ const FooterContainer = styled.footer`
             max-width: 100%;
         }
     }
+    
+
+    
     @media (max-width: 1024px) {
         
         #footer-content{
@@ -91,8 +99,11 @@ const FooterContainer = styled.footer`
             & .infoContent{
                 font-size: 18px;
                 width: 80%;
-                justify-content: space-between;
-                
+                justify-content: space-between;                
+                & .info-title {
+                    
+                    font-size: 18px;
+                }
             }
         }
         & #contato{
@@ -104,8 +115,9 @@ const FooterContainer = styled.footer`
             width: 80%;
         }
         & span p{
-            font-size: 18px;
+            font-size: 15px;
         }
+        
         
     }
     
@@ -180,9 +192,8 @@ const categoryData = [
                 <div className="infoContent">
                     <Information title="Informação" informations={infoData} />
                     <Information title="Categorias" informations={categoryData} />
-                    
-                    
                 </div>
+
                 <div id="contato">
                     <h2>Contato</h2>
                     <p>Av. Santos Dumont, 1510-1 Andar - Aldeota, Fortaleza - CE, 60150-161</p>
