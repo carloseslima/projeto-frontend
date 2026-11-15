@@ -1,7 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Logo from "./Logo";
+import MenuMobile from "./MenuMobile";
+import Menu from "./Menu";
 
 const HeaderContainer = styled.header`
     background-color: ${(props) => props.theme.colors.white};
@@ -100,33 +99,28 @@ const HeaderContainer = styled.header`
             }
         }
     }
+@media (max-width: 1024px) {
+    width: 80%;
+    padding: 0 10%;
+    #logo{
+        width: 200px;
+    }
+    & .menu-sup, #cadastrese, a#entrar{
+        display: none;
+    }
+}
 `;
 
 const Header = () => {
     return (
-        <HeaderContainer>
-            <div>
-                <Link to="/"><Logo /></Link>
-                
-                <span>
-                    <input type="search" placeholder="Pesquisar produto..." />
-                    <button type="submit"><img src="/search.svg" alt="search" /></button>
-                </span>
+        <>
+            <MenuMobile />
+            <HeaderContainer>
+                <Menu />
+            </HeaderContainer>
+            
+        </>
 
-                <a id="cadastrese" href="#">Cadastre-se</a>
-                <a id="entrar" href="#">Entrar</a>
-                <img src="/buy.svg" alt="" />
-
-            </div>
-            <nav>
-                <ul>
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/produtos">Produtos</NavLink></li>
-                    <li><NavLink to="/categorias">Categorias</NavLink></li>
-                    <li><NavLink to="/meus-pedidos">Meus Pedidos</NavLink></li>
-                </ul>
-            </nav>
-        </HeaderContainer>
     );
 }
 

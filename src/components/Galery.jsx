@@ -1,4 +1,16 @@
 import React, { useState } from 'react';
+import styled from "styled-components";
+
+const Slider = styled.div`
+  width: 100%;
+  .img-slider{
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+  
+
+`;
 
 const images = [
   '/home-slide-1.jpeg',
@@ -23,17 +35,27 @@ const Galery = () => {
   };
 
   return (
-    <div style={{ maxWidth: '1440px', margin: '0 auto', textAlign: 'center' }}>
-      <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
-        <img
+    <Slider style={{
+      maxWidth: '1440px',
+      margin: '0 auto',
+      textAlign: 'center'
+    }}>
+      <div style={{
+        position: 'relative',
+        overflow: 'hidden',
+        borderRadius: '8px'
+      }}>
+        <img className='img-slider'
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
-          style={{ width: '100%', height: '681px', objectFit: 'cover' }}
+          style={{
+
+          }}
         />
 
         <button
           onClick={handlePrev}
-          style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', width: "60px", height: "60px", borderRadius: "50%", border: "none", cursor: "pointer", opacity: ".7"}}
+          style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', width: "60px", height: "60px", borderRadius: "50%", border: "none", cursor: "pointer", opacity: ".7" }}
         >
           ❮
         </button>
@@ -74,7 +96,7 @@ const Galery = () => {
           </button>
         ))}
       </div>
-    </div>
+    </Slider>
   );
 }
 

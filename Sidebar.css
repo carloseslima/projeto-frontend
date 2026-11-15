@@ -1,0 +1,171 @@
+#container-hamburger {
+  width: 100%;
+  position: absolute;
+  top: 20px;
+}
+
+
+/* Botão Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+}
+
+/* Fundo escuro */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Menu lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  max-width: 85%;
+  height: 100vh;
+  background: #fff;
+  z-index: 1002;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.aberto {
+  transform: translateX(0);
+}
+
+/* Botão fechar */
+.fechar-menu {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #1F1F1F;
+}
+
+/* Conteúdo */
+.sidebar-conteudo {
+  padding: 65px 25px 25px;
+}
+
+.sidebar-conteudo h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Links */
+.sidebar nav {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.link-menu {
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s;
+  color: #1F1F1F;
+}
+
+.link-menu:hover {
+  color: #991956;
+}
+
+.active {
+  color: #C92071;
+  font-weight: bold;
+}
+
+.active:before {
+  content: "";
+  position: relative;
+  display: flex;
+  top: 25px;
+  width: 100%;
+  height: 2px;
+  background-color: #C92071;
+}
+
+
+
+
+
+/* Área da conta */
+.sidebar-conta {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.btn-entrar {
+  display: block;
+  text-align: center;
+  background: #C92071;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.btn-entrar:hover {
+  background: #991956;
+}
+
+.link-cadastro {
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link-cadastro:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+}

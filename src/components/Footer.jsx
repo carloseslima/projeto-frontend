@@ -1,13 +1,12 @@
 import Logo from "./Logo"
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Info } from "@primeicons/react";
 import Information from "./Information";
 
 const FooterContainer = styled.footer`
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    
     gap: 50px;
     justify-content: space-between;
     background-color: ${(props) => props.theme.colors.darkgray};
@@ -17,12 +16,14 @@ const FooterContainer = styled.footer`
     & #footer-content{
         display: flex;
         max-width: 1440px;
+        width: 80%;
         margin: 0 auto;
         gap: 20px;
     }
     & #footer-logo{
         display: flex;
         flex-direction: column;
+        width: 50%;
     }
     & h1 img{
         filter: contrast(0) brightness(10);
@@ -74,7 +75,38 @@ const FooterContainer = styled.footer`
             border: 1px solid ${(props) => props.theme.colors.lightgray2};;
             margin: 0;
             width: 1440px;
+            max-width: 100%;
         }
+    }
+    @media (max-width: 1024px) {
+        
+        #footer-content{
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+            & #footer-logo{
+                width: 80%;
+                font-size: 18px;
+            }
+            & .infoContent{
+                font-size: 18px;
+                width: 80%;
+                justify-content: space-between;
+                
+            }
+        }
+        & #contato{
+            width: 80%;
+            font-size: 18px;
+            
+        }
+        & span hr{
+            width: 80%;
+        }
+        & span p{
+            font-size: 18px;
+        }
+        
     }
     
 `;

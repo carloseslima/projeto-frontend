@@ -17,6 +17,16 @@ const ColectionImages = styled.div`
             border-radius: 10px;
         }
     }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+        & a{
+            width: 80%;
+        }
+
+
+    }
     
 `;
 
@@ -84,6 +94,14 @@ const HomePage = () => {
                 }
             }
         }
+    @media (max-width: 1024px) {
+        justify-content: center;
+        gap: 20px;
+        & div{
+            width: 40%;
+        }
+    }
+    
 `;
 
     return (
@@ -91,7 +109,7 @@ const HomePage = () => {
             <Galery />
 
             <Section title="Coleção em destaque" titleAlign="left" link="">
-                <ColectionImages>
+                <ColectionImages id="colec-dest">
                     <Link to="#"><img src="/collection-1.png" alt="Coleção em destaque" /></Link>
                     <Link to="#"><img src="/collection-2.png" alt="Coleção em destaque" /></Link>
                     <Link to="#"><img src="/collection-3.png" alt="Coleção em destaque" /></Link>
