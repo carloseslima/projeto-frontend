@@ -1,0 +1,37 @@
+
+.pesquisa-menu {
+    display: flex;
+    align-items: center;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+    height: 42px;
+}
+
+.pesquisa-menu input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 12px;
+    font-size: 14px;
+}
+
+.pesquisa-menu button {
+    height: 100%;
+    width: 45px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pesquisa-menu button img {
+    width: 20px;
+    height: 20px;
+}

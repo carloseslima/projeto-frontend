@@ -105,13 +105,14 @@ const HeaderContainer = styled.header`
     #logo{
         width: 200px;
     }
-    & .menu-sup, #cadastrese, a#entrar{
+    & .menu-sup, #menu-container{
         display: none;
     }
     & div{
         
     }
 }
+
 `;
 
 const Header = () => {
