@@ -1,5 +1,5 @@
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "../Sidebar.css";
 import Logo from "./Logo";
@@ -39,8 +39,9 @@ export default function MenuMobile() {
                 <span></span>
                 <span></span>
             </button>
-
-            <Logo />
+            
+            <Link to="/"><Logo /></Link>
+             
 
             <div className="search-cart">
 
